@@ -1,0 +1,27 @@
+{
+  "name": "testcypress",
+  "version": "1.0.0",
+  "description": "Cypress Dicsys Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tomicaceres07/DicsysCypress.git"
+  },
+  "keywords": [
+    "js",
+    "test",
+    "testing"
+  ],
+  "author": "Tomás Caceres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tomicaceres07/DicsysCypress/issues"
+  },
+  "homepage": "https://github.com/Tomicaceres07/DicsysCypress#readme",
+  "dependencies": {
+    "cypress": "^12.17.2"
+  }
+}
