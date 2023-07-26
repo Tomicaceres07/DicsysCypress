@@ -6,48 +6,14 @@ describe('Logueo de página Automation Test Store', () => {
   })
 
   it('Logueo Válido', () => {
-    const login = new LoginPage();
-
-    // Forzar visibilidad del menú 
-    login.getTopMenuUl().invoke('show');
-
-    // Poner mouse encima del elemento li
-    login.getAccountLi().trigger('mouseover');
-
-    // Click en el botón Account para redirigir a login
-    login.getAccountBtn().click();
-    
-    // Escribo mi nombre y contraseña real
-    login.getNameInput().type('tomicaceres07');
-    login.getPasswordInput().type('45241883Tomi');
-    
-    // Click en el botón Login
-    login.getLoginBtn().click();
-
+    cy.login('tomicaceres07', '45241883Tomi');
     // El texto de bienvenida debería contener "Welcome back Tomás"
-    login.getWelcomeText().contains('Welcome back Tomás');
+    new LoginPage().getWelcomeText().contains('Welcome back Tomás');
   })
 
   it('Logueo Inválido', () => {
-    const login = new LoginPage();
-
-    // Forzar visibilidad del menú 
-    login.getTopMenuUl().invoke('show');
-
-    // Poner mouse encima del elemento li
-    login.getAccountLi().trigger('mouseover');
-
-    // Click en el botón Account para redirigir a login
-    login.getAccountBtn().click();
-    
-    // Escribo mi nombre y contraseña real
-    login.getNameInput().type('tomicaceres07');
-    login.getPasswordInput().type('mipasswordfalsa');
-    
-    // Click en el botón Login
-    login.getLoginBtn().click();
-
+    cy.login('tomicaceres07', 'mipasswordfalsa');
     // El texto de la alerta de error debería contener "Error: Incorrect login or password provided."
-    login.getAlertText().contains('Error: Incorrect login or password provided.');
+    new LoginPage().getAlertText().contains('Error: Incorrect login or password provided.');
   })
 })
